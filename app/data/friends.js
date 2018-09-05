@@ -35,3 +35,5 @@ var friends = [
     "scores": [1, 3, 4, 4, 2, 1, 5, 5, 5, 5]
   }
 ]
+
+module.exports = friends;
