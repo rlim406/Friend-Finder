@@ -34,6 +34,6 @@ var friends = [
     "photo": "http://cdn01.cdn.justjared.com/wp-content/uploads/headlines/2017/08/anne-hathaway-princess-diaries-happy-birthday-social.jpg",
     "scores": [1, 3, 4, 4, 2, 1, 5, 5, 5, 5]
   }
-]
+];
 
 module.exports = friends;

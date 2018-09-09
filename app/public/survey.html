@@ -5,244 +5,285 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Friend Finder</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 
 <body>
+  <div class="container">
 
-  <!-- question 1 -->
+    <h4>Name</h4>
 
-  <form id="questions">
+    <input type="text" name="" id="name" class="form-control" required>
 
-    <div class="quest">
-      <p class="ask">1) You would call yourself pretty adventurous when it comes to trying new food.</p>
+    <h4>Link to Photo</h4>
 
-      <input type="radio" name="one" value="1">
-      <label>1 (Strongly Disagree)</label>
+    <input type="text" name="" id="photo" class="form-control" required>
 
-      <input type="radio" name="one" value="2">
-      <label>2</label>
+    <form id="questions">
 
+      <!-- question 1 -->
 
-      <input type="radio" name="one" value="3">
-      <label>3</label>
+      <div class="quest">
+        <p class="ask">1) You would call yourself pretty adventurous when it comes to trying new food.</p>
 
-      <input type="radio" name="one" value="4">
-      <label>4</label>
+        <input type="radio" name="one" value="1">
+        <label>1 (Strongly Disagree)</label>
 
-      <input type="radio" name="one" value="5">
-      <label>5 (Strongly Agree)</label>
+        <input type="radio" name="one" value="2">
+        <label>2</label>
 
-    </div>
+        <input type="radio" name="one" value="3">
+        <label>3</label>
 
+        <input type="radio" name="one" value="4">
+        <label>4</label>
 
-    <!-- question 2 -->
+        <input type="radio" name="one" value="5">
+        <label>5 (Strongly Agree)</label>
 
-    <div class="quest">
-      <p class="ask">2) Staying at home with netflix sounds more appealing to you than going on a hike.</p>
+      </div>
 
-      <input type="radio" name="two" value="1">
-      <label>1 (Strongly Disagree)</label>
 
-      <input type="radio" name="two" value="2">
-      <label>2</label>
+      <!-- question 2 -->
 
+      <div class="quest">
+        <p class="ask">2) Staying at home with netflix sounds more appealing to you than going on a hike.</p>
 
-      <input type="radio" name="two" value="3">
-      <label>3</label>
+        <input type="radio" name="two" value="1">
+        <label>1 (Strongly Disagree)</label>
 
-      <input type="radio" name="two" value="4">
-      <label>4</label>
+        <input type="radio" name="two" value="2">
+        <label>2</label>
 
-      <input type="radio" name="two" value="5">
-      <label>5 (Strongly Agree)</label>
-    </div>
 
+        <input type="radio" name="two" value="3">
+        <label>3</label>
 
-    <!-- question 3 -->
+        <input type="radio" name="two" value="4">
+        <label>4</label>
 
-    <div class="quest">
-      <p class="ask">3) You're usually the one to go introduce yourself when meeting new people.</p>
+        <input type="radio" name="two" value="5">
+        <label>5 (Strongly Agree)</label>
+      </div>
 
-      <input type="radio" name="three" value="1">
-      <label>1 (Strongly Disagree)</label>
 
-      <input type="radio" name="three" value="2">
-      <label>2</label>
+      <!-- question 3 -->
 
+      <div class="quest">
+        <p class="ask">3) You're usually the one to go introduce yourself when meeting new people.</p>
 
-      <input type="radio" name="three" value="3">
-      <label>3</label>
+        <input type="radio" name="three" value="1">
+        <label>1 (Strongly Disagree)</label>
 
-      <input type="radio" name="three" value="4">
-      <label>4</label>
+        <input type="radio" name="three" value="2">
+        <label>2</label>
 
-      <input type="radio" name="three" value="5">
-      <label>5 (Strongly Agree)</label>
-    </div>
 
+        <input type="radio" name="three" value="3">
+        <label>3</label>
 
-    <!-- question 4 -->
+        <input type="radio" name="three" value="4">
+        <label>4</label>
 
-    <div class="quest">
-      <p class="ask">4) You're considered to be the 'planner' of the group.</p>
+        <input type="radio" name="three" value="5">
+        <label>5 (Strongly Agree)</label>
+      </div>
 
-      <input type="radio" name="four" value="1">
-      <label>1 (Strongly Disagree)</label>
 
-      <input type="radio" name="four" value="2">
-      <label>2</label>
+      <!-- question 4 -->
 
+      <div class="quest">
+        <p class="ask">4) You're considered to be the 'planner' of the group.</p>
 
-      <input type="radio" name="four" value="3">
-      <label>3</label>
+        <input type="radio" name="four" value="1">
+        <label>1 (Strongly Disagree)</label>
 
-      <input type="radio" name="four" value="4">
-      <label>4</label>
+        <input type="radio" name="four" value="2">
+        <label>2</label>
 
-      <input type="radio" name="four" value="5">
-      <label>5 (Strongly Agree)</label>
 
-    </div>
+        <input type="radio" name="four" value="3">
+        <label>3</label>
 
-    <!-- question 5 -->
+        <input type="radio" name="four" value="4">
+        <label>4</label>
 
-    <div class="quest">
-      <p class="ask">5) At least one of these are on your bucket list: Bungee Jumping, Skydiving, Ziplining.</p>
+        <input type="radio" name="four" value="5">
+        <label>5 (Strongly Agree)</label>
 
-      <input type="radio" name="five" value="1">
-      <label>1 (Strongly Disagree)</label>
+      </div>
 
-      <input type="radio" name="five" value="2">
-      <label>2</label>
+      <!-- question 5 -->
 
+      <div class="quest">
+        <p class="ask">5) At least one of these are on your bucket list: Bungee Jumping, Skydiving, Ziplining.</p>
 
-      <input type="radio" name="five" value="3">
-      <label>3</label>
+        <input type="radio" name="five" value="1">
+        <label>1 (Strongly Disagree)</label>
 
-      <input type="radio" name="five" value="4">
-      <label>4</label>
+        <input type="radio" name="five" value="2">
+        <label>2</label>
 
-      <input type="radio" name="five" value="5">
-      <label>5 (Strongly Agree)</label>
 
-    </div>
+        <input type="radio" name="five" value="3">
+        <label>3</label>
 
-    <!-- question 6 -->
+        <input type="radio" name="five" value="4">
+        <label>4</label>
 
-    <div class="quest">
-      <p class="ask">6) Your idea of traveling includes the words, "backpacking" and "hostels".</p>
+        <input type="radio" name="five" value="5">
+        <label>5 (Strongly Agree)</label>
 
-      <input type="radio" name="six" value="1">
-      <label>1 (Strongly Disagree)</label>
+      </div>
 
-      <input type="radio" name="six" value="2">
-      <label>2</label>
+      <!-- question 6 -->
 
+      <div class="quest">
+        <p class="ask">6) Your idea of traveling includes the words, "backpacking" and "hostels".</p>
 
-      <input type="radio" name="six" value="3">
-      <label>3</label>
+        <input type="radio" name="six" value="1">
+        <label>1 (Strongly Disagree)</label>
 
-      <input type="radio" name="six" value="4">
-      <label>4</label>
+        <input type="radio" name="six" value="2">
+        <label>2</label>
 
-      <input type="radio" name="six" value="5">
-      <label>5 (Strongly Agree)</label>
 
-    </div>
+        <input type="radio" name="six" value="3">
+        <label>3</label>
 
-    <!-- question 7 -->
+        <input type="radio" name="six" value="4">
+        <label>4</label>
 
-    <div class="quest">
-      <p class="ask">7) You would consider yourself to be an introvert.</p>
+        <input type="radio" name="six" value="5">
+        <label>5 (Strongly Agree)</label>
 
-      <input type="radio" name="seven" value="1">
-      <label>1 (Strongly Disagree)</label>
+      </div>
 
-      <input type="radio" name="seven" value="2">
-      <label>2</label>
+      <!-- question 7 -->
 
+      <div class="quest">
+        <p class="ask">7) You would consider yourself to be an introvert.</p>
 
-      <input type="radio" name="seven" value="3">
-      <label>3</label>
+        <input type="radio" name="seven" value="1">
+        <label>1 (Strongly Disagree)</label>
 
-      <input type="radio" name="seven" value="4">
-      <label>4</label>
+        <input type="radio" name="seven" value="2">
+        <label>2</label>
 
-      <input type="radio" name="seven" value="5">
-      <label>5 (Strongly Agree)</label>
 
-    </div>
+        <input type="radio" name="seven" value="3">
+        <label>3</label>
 
-    <!-- question 8 -->
+        <input type="radio" name="seven" value="4">
+        <label>4</label>
 
-    <div class="quest">
-      <p class="ask">8) Your go to movies are usually romantic comedies.</p>
+        <input type="radio" name="seven" value="5">
+        <label>5 (Strongly Agree)</label>
 
-      <input type="radio" name="eight" value="1">
-      <label>1 (Strongly Disagree)</label>
+      </div>
 
-      <input type="radio" name="eight" value="2">
-      <label>2</label>
+      <!-- question 8 -->
 
+      <div class="quest">
+        <p class="ask">8) Your go to movies are usually romantic comedies.</p>
 
-      <input type="radio" name="eight" value="3">
-      <label>3</label>
+        <input type="radio" name="eight" value="1">
+        <label>1 (Strongly Disagree)</label>
 
-      <input type="radio" name="eight" value="4">
-      <label>4</label>
+        <input type="radio" name="eight" value="2">
+        <label>2</label>
 
-      <input type="radio" name="eight" value="5">
-      <label>5 (Strongly Agree)</label>
 
-    </div>
+        <input type="radio" name="eight" value="3">
+        <label>3</label>
 
-    <!-- question 9 -->
+        <input type="radio" name="eight" value="4">
+        <label>4</label>
 
-    <div class="quest">
-      <p class="ask">9) You have an amazing memory for movie quotes.</p>
+        <input type="radio" name="eight" value="5">
+        <label>5 (Strongly Agree)</label>
 
-      <input type="radio" name="nine" value="1">
-      <label>1 (Strongly Disagree)</label>
+      </div>
 
-      <input type="radio" name="nine" value="2">
-      <label>2</label>
+      <!-- question 9 -->
 
+      <div class="quest">
+        <p class="ask">9) You have an amazing memory for movie quotes.</p>
 
-      <input type="radio" name="nine" value="3">
-      <label>3</label>
+        <input type="radio" name="nine" value="1">
+        <label>1 (Strongly Disagree)</label>
 
-      <input type="radio" name="nine" value="4">
-      <label>4</label>
+        <input type="radio" name="nine" value="2">
+        <label>2</label>
 
-      <input type="radio" name="nine" value="5">
-      <label>5 (Strongly Agree)</label>
 
-    </div>
+        <input type="radio" name="nine" value="3">
+        <label>3</label>
 
-    <!-- question 10 -->
+        <input type="radio" name="nine" value="4">
+        <label>4</label>
 
-    <div class="quest">
-      <p class="ask">10) You believe that dessert is just as important as the main meal.</p>
+        <input type="radio" name="nine" value="5">
+        <label>5 (Strongly Agree)</label>
 
-      <input type="radio" name="ten" value="1">
-      <label>1 (Strongly Disagree)</label>
+      </div>
 
-      <input type="radio" name="ten" value="2">
-      <label>2</label>
+      <!-- question 10 -->
 
+      <div class="quest">
+        <p class="ask">10) You believe that dessert is just as important as the main meal.</p>
 
-      <input type="radio" name="ten" value="3">
-      <label>3</label>
+        <input type="radio" name="ten" value="1">
+        <label>1 (Strongly Disagree)</label>
 
-      <input type="radio" name="ten" value="4">
-      <label>4</label>
+        <input type="radio" name="ten" value="2">
+        <label>2</label>
 
-      <input type="radio" name="ten" value="5">
-      <label>5 (Strongly Agree)</label>
-    </div>
-    <button id="end" type="submit" class="btn btn-dark btn-lg">Find your ideal buddy!</button>
-  </form>
+
+        <input type="radio" name="ten" value="3">
+        <label>3</label>
+
+        <input type="radio" name="ten" value="4">
+        <label>4</label>
+
+        <input type="radio" name="ten" value="5">
+        <label>5 (Strongly Agree)</label>
+      </div>
+      <button id="end" type="submit" class="btn btn-dark btn-lg">Find your ideal buddy!</button>
+    </form>
+  </div>
 
 </body>
+
+<script type="text/javascript">
+
+  $("#submit").on("click", function () {
+
+    var userValues = {
+
+      name: $("#name").val(),
+
+      photo: $("#photo").val(),
+
+      scores: [$("input[type='radio'][name='one']:checked").val(), $("input[type='two'][name='one']:checked").val(), $("input[type='radio'][name='three']:checked").val(), $("input[type='radio'][name='four']:checked").val(), $("input[type='radio'][name='five']:checked").val(), $("input[type='radio'][name='six']:checked").val(), $("input[type='radio'][name='seven']:checked").val(), $("input[type='radio'][name='eight']:checked").val(), $("input[type='radio'][name='nine']:checked").val(), $("input[type='radio'][name='ten']:checked").val(),]
+
+    }
+
+
+    var currentURL = window.location.origin;
+
+    $.post(currentURL + "/api/friends", userValues, function (data) {
+
+    });
+
+
+  });
+
+</script>
 
 </html>
