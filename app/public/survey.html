@@ -258,9 +258,6 @@
     <div class="modal-dialog">
 
 
-
-      <!-- Modal content-->
-
       <div class="modal-content">
 
         <div class="modal-header">
@@ -268,7 +265,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
           <h2 class="modal-title">
-            <strong>Best Match</strong>
+            <strong>Your new best friend</strong>
           </h2>
 
         </div>
@@ -297,28 +294,31 @@
 
   <script type="text/javascript">
 
-    var userData = {
+    $("#submit").on("click", function () {
 
-      name: $("#name").val(),
+      var userData = {
 
-      photo: $("#photo").val(),
+        name: $("#name").val(),
 
-      scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(),]
+        photo: $("#photo").val(),
 
-    }
+        scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(),]
 
-    var currentURL = window.location.origin;
+      }
 
-    $.post(currentURL + "/api/friends", userData, function (data) {
+      var currentURL = window.location.origin;
 
-      $("#matchName").text(data.name);
+      $.post(currentURL + "/api/friends", userData, function (data) {
 
-      $('#matchImg').attr("src", data.photo);
+        $("#matchName").text(data.name);
 
-      $("#resultsModal").modal('toggle');
+        $('#matchImg').attr("src", data.photo);
+
+        $("#resultsModal").modal('toggle');
 
 
 
+      });
     });
 
   </script>
