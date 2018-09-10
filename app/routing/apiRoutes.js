@@ -13,41 +13,69 @@ module.exports = function (app) {
 
   app.post('/api/friends', function (req, res) {
 
-
-    var newFriend = {
-
-      name: "",
-
-      image: "",
-
-      matchDifference: 500
-
-    };
+    // Capture the user input object
 
     var userInput = req.body;
 
-    var userScores = userInput.scores;
-
-    var totalDifference = 0;
+    console.log('userInput = ' + JSON.stringify(userInput));
 
 
-    for (var i = 0; i < [friendData].length; i++) {
 
-      totalDifference = 0;
+    var userScore = userInput.scores;
 
-
-      for (var j = 0; j < [userScores].length; j++) {
-
-        totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friendData[i].scores[j]));
-
-        if (totalDifference <= newFriend.friendDifference) {
+    console.log('userResponses = ' + userScore);
 
 
-          newFriend.name = friendData[i].name;
 
-          newFriend.photo = friendData[i].photo;
+    // Compute best friend match
 
-        }
+    var matchName = '';
+
+    var matchImage = '';
+
+    var totalDifference = 500; // Make the initial value big for comparison
+
+
+
+    // Examine all existing friends in the list
+
+    for (var i = 0; i < friendData.length; i++) {
+
+      // console.log('friend = ' + JSON.stringify(friends[i]));
+
+
+
+      // Compute differenes for each question
+
+      var diff = 0;
+
+      for (var j = 0; j < userScore.length; j++) {
+
+        diff += Math.abs(friendData[i].scores[j] - userScore[j]);
+
+      }
+
+      console.log('diff = ' + diff);
+
+
+
+      // If lowest difference, record the friend match
+
+      if (diff < totalDifference) {
+
+        console.log('Closest match found = ' + diff);
+
+        console.log('Friend name = ' + friendData[i].name);
+
+        console.log('Friend image = ' + friendData[i].photo);
+
+
+
+        totalDifference = diff;
+
+        matchName = friendData[i].name;
+
+        matchImage = friendData[i].photo;
 
       }
 
@@ -55,11 +83,15 @@ module.exports = function (app) {
 
 
 
-    friendData.push(userInput);
+    // Add new user
+
+    friends.push(userInput);
 
 
 
-    res.json(newFriend);
+    // Send appropriate response
+
+    res.json({ matchName: matchName, matchImage: matchImage });
 
   });
 

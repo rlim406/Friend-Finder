@@ -30,7 +30,7 @@
 
     <h4>You would call yourself pretty adventurous when it comes to trying new food.</h4>
 
-    <select data-placeholder="" class="chosen-select" id="q1">
+    <select data-placeholder="" id="q1">
 
       <option value=""></option>
 
@@ -52,7 +52,7 @@
 
     <h4>Staying at home with netflix sounds more appealing to you than going on a hike.</h4>
 
-    <select data-placeholder="" class="chosen-select" id="q2">
+    <select data-placeholder="" id="q2">
 
       <option value=""></option>
 
@@ -74,7 +74,7 @@
 
     <h4>You're usually the one to go introduce yourself when meeting new people.</h4>
 
-    <select data-placeholder="" class="chosen-select" id="q3">
+    <select data-placeholder="" id="q3">
 
       <option value=""></option>
 
@@ -96,7 +96,7 @@
 
     <h4>You're considered to be the 'planner' of the group.</h4>
 
-    <select data-placeholder="" class="chosen-select" id="q4">
+    <select data-placeholder="" id="q4">
 
       <option value=""></option>
 
@@ -118,7 +118,7 @@
 
     <h4>At least one of these are on your bucket list: Bungee Jumping, Skydiving, Ziplining.</h4>
 
-    <select data-placeholder="" class="chosen-select" id="q5">
+    <select data-placeholder="" id="q5">
 
       <option value=""></option>
 
@@ -140,7 +140,7 @@
 
     <h4>Your idea of traveling includes the words, "backpacking" and "hostels".</h4>
 
-    <select data-placeholder="" class="chosen-select" id="q6">
+    <select data-placeholder="" id="q6">
 
       <option value=""></option>
 
@@ -162,7 +162,7 @@
 
     <h4>You would consider yourself to be an introvert.</h4>
 
-    <select data-placeholder="" class="chosen-select" id="q7">
+    <select data-placeholder="" id="q7">
 
       <option value=""></option>
 
@@ -184,7 +184,7 @@
 
     <h4>Your go to movies are usually romantic comedies.</h4>
 
-    <select data-placeholder="" class="chosen-select" id="q8">
+    <select data-placeholder="" id="q8">
 
       <option value=""></option>
 
@@ -206,7 +206,7 @@
 
     <h4>You have an amazing memory for movie quotes.</h4>
 
-    <select data-placeholder="" class="chosen-select" id="q9">
+    <select data-placeholder="" id="q9">
 
       <option value=""></option>
 
@@ -228,7 +228,7 @@
 
     <h4>You believe that dessert is just as important as the main meal.</h4>
 
-    <select data-placeholder="" class="chosen-select" id="q10">
+    <select data-placeholder="" id="q10">
 
       <option value=""></option>
 
@@ -249,9 +249,6 @@
 
   </div>
 
-
-
-  <!-- Modal -->
 
   <div id="resultsModal" class="modal fade" role="dialog">
 
@@ -286,15 +283,14 @@
 
       </div>
 
-
-
     </div>
 
   </div>
 
   <script type="text/javascript">
 
-    $("#submit").on("click", function () {
+    $("#submit").on("click", function (event) {
+      event.preventDefault();
 
       var userData = {
 
@@ -302,26 +298,30 @@
 
         photo: $("#photo").val(),
 
-        scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(),]
+        scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
 
-      }
+      };
 
-      var currentURL = window.location.origin;
+      console.log('userInput = ' + JSON.stringify(userData));
 
-      $.post(currentURL + "/api/friends", userData, function (data) {
+      $.post("/api/friends", userData)
 
-        $("#matchName").text(data.name);
+        .done(function (data) {
 
-        $('#matchImg').attr("src", data.photo);
+          console.log('response = ' + JSON.stringify(data));
 
-        $("#resultsModal").modal('toggle');
+          $("#matchName").html(data.matchName);
 
+          $('#matchImg').attr("src", data.matchImage);
 
+          $("#resultsModal").modal();
 
-      });
+        });
+
     });
 
   </script>
+
 </body>
 
 </html>
