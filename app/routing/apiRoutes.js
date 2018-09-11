@@ -2,6 +2,8 @@ var friendData = require('../data/friends.js');
 
 var path = require('path');
 
+
+
 module.exports = function (app) {
 
   app.get('/api/friends', function (req, res) {
@@ -26,26 +28,16 @@ module.exports = function (app) {
     console.log('userResponses = ' + userScore);
 
 
-
-    // Compute best friend match
-
     var matchName = '';
 
     var matchImage = '';
 
-    var totalDifference = 500; // Make the initial value big for comparison
+    var totalDifference = 500;
 
 
-
-    // Examine all existing friends in the list
 
     for (var i = 0; i < friendData.length; i++) {
 
-      // console.log('friend = ' + JSON.stringify(friends[i]));
-
-
-
-      // Compute differenes for each question
 
       var diff = 0;
 
@@ -55,23 +47,19 @@ module.exports = function (app) {
 
       }
 
-      console.log('diff = ' + diff);
-
-
-
-      // If lowest difference, record the friend match
 
       if (diff < totalDifference) {
 
-        console.log('Closest match found = ' + diff);
+        var minimum = Math.min(diff);
+
+        console.log('Closest match found = ' + minimum);
 
         console.log('Friend name = ' + friendData[i].name);
 
         console.log('Friend image = ' + friendData[i].photo);
 
 
-
-        totalDifference = diff;
+        totalDifference = minimum;
 
         matchName = friendData[i].name;
 
@@ -82,14 +70,8 @@ module.exports = function (app) {
     }
 
 
+    friendData.push(userInput);
 
-    // Add new user
-
-    friends.push(userInput);
-
-
-
-    // Send appropriate response
 
     res.json({ matchName: matchName, matchImage: matchImage });
 
