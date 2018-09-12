@@ -32,7 +32,7 @@ module.exports = function (app) {
 
     var matchImage = '';
 
-    var totalDifference = 500;
+    var totalDifference = 50;
 
 
 
@@ -43,10 +43,11 @@ module.exports = function (app) {
 
       for (var j = 0; j < userScore.length; j++) {
 
-        diff += Math.abs(friendData[i].scores[j] - userScore[j]);
+        diff += Math.abs(parseInt(friendData[i].scores[j]) - parseInt(userScore[j]));
 
       }
 
+      // console.log('diff = ' + diff);
 
       if (diff < totalDifference) {
 
