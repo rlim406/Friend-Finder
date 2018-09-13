@@ -15,17 +15,16 @@ module.exports = function (app) {
 
   app.post('/api/friends', function (req, res) {
 
-    // Capture the user input object
 
     var userInput = req.body;
 
-    console.log('userInput = ' + JSON.stringify(userInput));
+    // console.log('userInput = ' + JSON.stringify(userInput));
 
 
 
     var userScore = userInput.scores;
 
-    console.log('userResponses = ' + userScore);
+    // console.log('userResponses = ' + userScore);
 
 
     var matchName = '';
@@ -53,11 +52,11 @@ module.exports = function (app) {
 
         var minimum = Math.min(diff);
 
-        console.log('Closest match found = ' + minimum);
+        // console.log('Closest match found = ' + minimum);
 
-        console.log('Friend name = ' + friendData[i].name);
+        // console.log('Friend name = ' + friendData[i].name);
 
-        console.log('Friend image = ' + friendData[i].photo);
+        // console.log('Friend image = ' + friendData[i].photo);
 
 
         totalDifference = minimum;
